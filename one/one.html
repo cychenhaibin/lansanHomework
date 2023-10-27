@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .center-table {
+      margin: 0 auto;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: center;
+
+    }
+
+    .one {
+      width: 200px;
+      float: left;
+    }
+
+    .two {
+      width: 300px;
+
+      float: left;
+    }
+
+    .one .oneone{
+      height: 30px;
+    }
+    .two .twotwo{
+      height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>网站标题</h1>
+    <ul>
+      <li><a href="#">京东</a></li>
+      <li><a href="#">腾讯</a></li>
+      <li><a href="#">这是一个点击跳转到内部页面的链接</a></li><br>
+      <li><a href="#">点击跳转到段落位置</a></li>
+      <li><a href="#">点击跳转到图片位置</a></li>
+      <li><a href="#">点击跳转到表格位置</a></li>
+    </ul>
+    <h1>文章一级标题</h1>
+    <p>
+    <h2>这是一些段落</h2>
+    </p>
+    <p><b>文化的简介</b></p>
+    <p>这是一个段落：</p>
+    <p>这又是一个段落：</p>
+    <h1>一些图片</h1>
+    <strong>日落</strong>
+    <p>点击图片查看日落简介</p>
+    <img src="https://tse3-mm.cn.bing.net/th/id/OIP-C.lln_ciXV70dzdHXJ2I0TPwHaHC?pid=ImgDet&rs=1" alt=""><br>
+    <strong>这是一个表格</strong>
+    <table class="center-table">
+      <tr>
+        <th>表头</th>
+        <th>表头</th>
+        <th>表头</th>
+      </tr>
+      <tr>
+        <td>单元格1</td>
+        <td>单元格2</td>
+        <td>单元格3</td>
+      </tr>
+      <tr>
+        <td rowspan="2">6</td>
+        <td>666</td>
+        <td>6666</td>
+      </tr>
+      <tr>
+        <td>hello</td>
+        <td>hi</td>
+      </tr>
+    </table>
+    <strong>这是一个有序列表</strong>
+    <ol>
+      <li>first</li>
+      <li>second</li>
+      <li>third</li>
+    </ol>
+    <h3>这将是一个侧栏</h3>
+    <strong>这是一个表单</strong><br>
+    <div class="one">
+      <div class="oneone">e-mail address:</div>
+      <div class="oneone">password:</div>
+      <div class="oneone">gender:</div>
+      <div class="oneone">origin:</div>
+      <div class="oneone">hobby:</div>
+      <div class="oneone">self-description:</div>
+
+    </div>
+    <div class="two">
+      <div class="twotwo">
+        <input type="text" placeholder="请输入邮箱地址">
+      </div>
+      <div class="twotwo">
+        <input type="password">
+      </div>
+      <div class="twotwo">
+        <input type="radio" name="sex">boy
+        <input type="radio" name="sex">girl
+      </div>
+      <div class="twotwo">
+        <select name="" id="">
+          <option value="">未知</option>
+          <option value="">已知</option>
+        </select>
+      </div>
+      <div class="twotwo">
+        <input type="checkbox" name="hobby">sleep
+        <input type="checkbox" name="hobby">eat
+        <input type="checkbox" name="hobby">study!!!
+        <input type="checkbox" name="hobby">
+      </div>
+      <div class="twotwo">
+        <textarea name="" id="" cols="19" rows="2" placeholder="这是一个多行输入框，可以输入自我描述。"></textarea>
+      </div>
+    </div>
+
+</body>
+
+</html>

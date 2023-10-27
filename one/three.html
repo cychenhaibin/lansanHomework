@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      --width: 20rem;
+      --height: 10rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      height: 100vh;
+      align-items: center;
+    }
+
+    div.slide {
+      width: var(--width);
+      height: var(--height);
+      border: .2rem dashed purple;
+      overflow: hidden;
+    }
+
+    ul.list {
+      width: calc(var(--width)*4);
+      height: inherit;
+      
+      position: relative;
+      z-index: -1;
+      animation: move 5s ease 1s infinite;
+    }
+    @keyframes move{
+      0%{
+        transform: translate(calc(0*var(--width)));
+      }
+      33%{
+        transform: translate(calc(-1*var(--width)));
+      }
+      66%{
+        transform: translate(calc(-2*var(--width)));
+      }
+      100%{
+        transform: translate(calc(-3*var(--width)));
+      }
+    }
+
+    li.item {
+      width: var(--width);
+      height: inherit;
+      box-sizing: border-box;
+      border: .2rem solid pink;
+      background-color: wheat;
+      color: #fff;
+      font-size: 2rem;
+      text-align: center;
+      line-height: var(--height);
+      float: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slide">
+
+    <ul class="list">
+      <li class="item">
+        你瞅啥？
+      </li>
+      <li class="item">
+        没事干？
+      </li>
+      <li class="item">
+        学习去！
+      </li>
+      <li class="item">
+        你瞅啥？
+      </li>
+    </ul>
+
+
+  </div>
+</body>
+
+</html>

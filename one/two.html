@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+    div{
+      display: flex;
+      width: 100%;
+      height: 100%;
+      background-color: pink;
+    }
+
+    .one {
+      flex: 1;
+      flex-shrink: 1;
+      height: 30vw;
+      margin: 0px;
+    }
+    .one:nth-child(1){
+      background-color:  red;
+    }
+    .one:nth-child(2){
+      background-color:  yellow;
+    }
+    .one:nth-child(3){
+      background-color:  blue;
+    }
+    .two {
+      flex: 1;
+      flex-shrink: 1;
+      height: 30vw;
+      margin: 0px;
+    }
+    .two:nth-child(1){
+      background-color:  green;
+    }
+    .two:nth-child(2){
+      background-color:  orange;
+    }
+    .two:nth-child(3){
+      background-color:  orange;
+    }
+    .three {
+      flex: 1;
+      flex-shrink: 1;
+      height: 30vw;
+      margin: 0px;
+    }
+    .three:nth-child(1){
+      background-color:  pink;
+    }
+    .three:nth-child(2){
+      background-color:  orange;
+    }
+    .three:nth-child(3){
+      background-color:  orange;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <span class="one">A</span>
+    <span class="one">B</span>
+    <span class="one">C</span>
+    
+  </div>
+  <div>
+    <span class="two">D</span>
+    <span class="two">F</span>
+    <span class="two"></span>
+  </div>
+  <div>
+    <span class="three">E</span>
+    <span class="three"></span>
+    <span class="three"></span>
+  </div>
+</body>
+</html>
