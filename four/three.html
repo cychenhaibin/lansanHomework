@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .tab {
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #ddd;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+
+        .content {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .active-tab {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .active-content {
+            display: block;
+        }
+    </style>
+    <title>Tab栏切换</title>
+</head>
+<body>
+    <div class="tab-container">
+        <div class="tab" onclick="changeTab(0)">第一件事</div>
+        <div class="tab" onclick="changeTab(1)">第二件事</div>
+        <div class="tab" onclick="changeTab(2)">第三件事</div>
+    </div>
+
+    <div class="content" id="content1">
+        <p>睡觉</p>
+    </div>
+    <div class="content" id="content2">
+        <p>吃饭</p>
+    </div>
+    <div class="content" id="content3">
+        <p>学习</p>
+    </div>
+
+    <script>
+        function changeTab(tabIndex) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.content');
+
+            tabs.forEach(tab => tab.classList.remove('active-tab'));
+            contents.forEach(content => content.classList.remove('active-content'));
+
+            tabs[tabIndex].classList.add('active-tab');
+            contents[tabIndex].classList.add('active-content');
+        }
+    </script>
+</body>
+</html>
