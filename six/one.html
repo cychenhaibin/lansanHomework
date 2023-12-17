@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     
+    <meta charset="UTF-8">
+     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Image Carousel with Axios</title>
+     
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+     
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+      <div class="swiper-container">
+            <div class="swiper-wrapper" id="carouselItems"></div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+
+     
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+     
+    <script>
+        axios({
+            method: "get",
+            url: "http://127.0.0.1:3000/banner"
+        }).then(response => {
+            if (response.status !== 200) {
+                console.error("Error fetching carousel data");
+                return;
+            }
+
+            // 处理响应数据，这取决于你的 API 返回的数据格式
+            displayCarousel(response.data.banners);
+        }).catch(error => {
+            console.error('Fetch error:', error);
+        });
+
+        function displayCarousel(carouselData) {
+            const carouselItems = document.getElementById('carouselItems');
+
+            // 遍历轮播图数据并创建轮播项
+            carouselData.forEach(item => {
+                const slideItem = document.createElement('div');
+                slideItem.classList.add('swiper-slide');
+
+                const imgElement = document.createElement('img');
+                imgElement.src = item.imageUrl;
+                imgElement.alt = item.alt;
+
+                slideItem.appendChild(imgElement);
+                carouselItems.appendChild(slideItem);
+            });
+
+            // 初始化 Swiper
+            const mySwiper = new Swiper('.swiper-container', {
+                // 添加其他 Swiper 配置选项
+                slidesPerView: 1,
+                spaceBetween: 10,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        }
+    </script>
+
+</body>
+
+</html>

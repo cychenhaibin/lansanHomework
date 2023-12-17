@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Search</title>
+</head>
+
+<body>
+  <script src="node_modules/axios/dist/axios.min.js"></script>
+  <input type="text" id="searchInput" placeholder="Enter your search">
+  <button onclick="searchMusic()">Search</button>
+
+  <ul id="searchResults"></ul>
+
+  <script>
+    function searchMusic() {
+      const searchQuery = document.getElementById('searchInput').value;
+      axios({
+        method: "get",
+        url: "http://127.0.01:3000/search?keywords=海阔天空"
+      }).then(response => {
+        // 检查响应状态码
+        if (response.status !== 200) {
+          console.error("错误")
+          return
+        }
+
+        // 处理响应数据，这取决于你的 API 返回的数据格式
+        displayResults(response.data.result.songs);
+      })
+        .catch(error => {
+          console.error('Fetch error:', error);
+        });
+
+
+    }
+
+    function displayResults(results) {
+      console.log(results);
+      const resultsList = document.getElementById('searchResults');
+      resultsList.innerHTML = '';  // 清空之前的搜索结果
+
+      // 遍历结果并创建列表项
+      results.forEach(result => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `<strong>歌曲:</strong> ${result.name}<br>
+                              <strong>作家:</strong> ${result.artists[0].name}<br>
+                              <strong>专辑:</strong> ${result.album.name}<br>`;   // 替换成实际的结果属性
+
+        // 可以在这里添加更多的结果信息，例如艺术家、专辑等
+
+        resultsList.appendChild(listItem);
+      });
+    }
+  </script>
+
+</body>
+
+</html>
