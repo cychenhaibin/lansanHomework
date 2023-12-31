@@ -15,4 +15,7 @@ function animateWithSetTimeout() {
   }, 1000); // 初始延迟
 }
 
+
+
+
 animateWithSetTimeout();
